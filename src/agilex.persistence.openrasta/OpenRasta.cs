@@ -4,9 +4,9 @@ using OpenRasta.DI;
 using agilex.persistence.nhibernate;
 using agilex.persistence.openrasta.Pipelines;
 
-namespace agilex.persistence
+namespace agilex.persistence.openrasta
 {
-    public static class OpenRasta
+    public static class AgilexOpenRasta
     {
         public static void Configure(IDatabaseConfigurationParams configurationParams)
         {
