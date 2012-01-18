@@ -31,11 +31,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="agilex.persistence">
-      <HintPath>..\packages\agilex.persistence.1.0.0.6\lib\net40\agilex.persistence.dll</HintPath>
+    <Reference Include="agilex.persistence, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\agilex.persistence.1.0.0.9\lib\net40\agilex.persistence.dll</HintPath>
     </Reference>
-    <Reference Include="agilex.persistence.nhibernate">
-      <HintPath>..\packages\agilex.persistence.1.0.0.6\lib\net40\agilex.persistence.nhibernate.dll</HintPath>
+    <Reference Include="agilex.persistence.nhibernate, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\agilex.persistence.1.0.0.9\lib\net40\agilex.persistence.nhibernate.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Core">
       <HintPath>..\packages\Castle.Core.2.5.2\lib\NET35\Castle.Core.dll</HintPath>

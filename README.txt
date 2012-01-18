@@ -1,5 +1,7 @@
 == agilex.persistence.openrasta
 
-Injects an agilex.persistence.IRepository instance into your context
+Uses an OR pipeline to inject an agilex.persistence.IRepository instance into your context 
+Also disposes of repository when closing pipeline (causing a commit)
 
-Ensure you have registered a class with the OpenRasta IoC container which implements agilex.persistence.IDatabaseConfigurationParams
+To configure call AgilexOpenRasta.Configure() and provide your database configuration as
+an agilex.persistence.IDatabaseConfiguration (concrete implementation available - agilex.persistence.DatabaseConfiguration)
