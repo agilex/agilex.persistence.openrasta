@@ -6,9 +6,9 @@ using agilex.persistence.openrasta.Pipelines;
 
 namespace agilex.persistence.openrasta
 {
-    public static class AgilexOpenRasta
+    public static class AgilexOpenRastaDatabase
     {
-        public static void ConfigureDatabase(IDatabaseConfigurationParams configurationParams)
+        public static void Configure(IDatabaseConfigurationParams configurationParams)
         {
             ResourceSpace.Uses.PipelineContributor<RepositoryOpeningPipeline>();
             ResourceSpace.Uses.PipelineContributor<RepositoryClosingPipeline>();
