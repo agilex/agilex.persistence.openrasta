@@ -15,6 +15,7 @@ namespace agilex.persistence.openrasta
             ResourceSpace.Uses.Resolver.AddDependencyInstance<ISessionFactory>(
                 new NhibernateConfiguration().GetSessionFactory(configurationParams), DependencyLifetime.Singleton);
             ResourceSpace.Uses.CustomDependency<IRepositoryFactory, RepositoryFactory>(DependencyLifetime.PerRequest);
+            ResourceSpace.Uses.CustomDependency<IRepositoryLocator, OpenRastaRepositoryLocator>(DependencyLifetime.PerRequest);
         }
     }
 }
