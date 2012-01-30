@@ -32,10 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="agilex.persistence, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\agilex.persistence.1.0.0.12\lib\net40\agilex.persistence.dll</HintPath>
+      <HintPath>..\packages\agilex.persistence.1.0.0.13\lib\net40\agilex.persistence.dll</HintPath>
     </Reference>
     <Reference Include="agilex.persistence.nhibernate, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\agilex.persistence.1.0.0.12\lib\net40\agilex.persistence.nhibernate.dll</HintPath>
+      <HintPath>..\packages\agilex.persistence.1.0.0.13\lib\net40\agilex.persistence.nhibernate.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Core">
       <HintPath>..\packages\Castle.Core.2.5.2\lib\NET35\Castle.Core.dll</HintPath>

@@ -16,6 +16,8 @@ namespace agilex.persistence.openrasta.Pipelines
 
         public PipelineContinuation Close(ICommunicationContext context)
         {
+            if (context.Request.Uri.ToString().Contains("favicon")) return PipelineContinuation.Continue;
+
             var repository = context.PipelineData[ContextKeys.Repository] as IRepository;
             if (repository != null) repository.Dispose();
             return PipelineContinuation.Continue;

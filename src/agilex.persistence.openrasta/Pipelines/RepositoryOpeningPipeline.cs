@@ -16,13 +16,15 @@ namespace agilex.persistence.openrasta.Pipelines
 
         public void Initialize(IPipeline pipelineRunner)
         {
-            pipelineRunner.Notify(OpenRepo).Before<KnownStages.IBegin>();
+            pipelineRunner.Notify(OpenRepo).Before<KnownStages.IAuthentication>();
         }
 
         #endregion
 
         public PipelineContinuation OpenRepo(ICommunicationContext context)
         {
+            if (context.Request.Uri.ToString().Contains("favicon")) return PipelineContinuation.Continue;
+
             IRepository repository = _repositoryFactory.Instance();
             repository.BeginTransaction();
             context.PipelineData.Add(ContextKeys.Repository, repository);
