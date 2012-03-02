@@ -31,11 +31,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="agilex.persistence, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\agilex.persistence.1.0.0.13\lib\net40\agilex.persistence.dll</HintPath>
+    <Reference Include="agilex.persistence">
+      <HintPath>..\..\..\Sport England\src\packages\agilex.persistence.1.0.0.19\lib\net40\agilex.persistence.dll</HintPath>
     </Reference>
-    <Reference Include="agilex.persistence.nhibernate, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\agilex.persistence.1.0.0.13\lib\net40\agilex.persistence.nhibernate.dll</HintPath>
+    <Reference Include="agilex.persistence.nhibernate">
+      <HintPath>..\..\..\Sport England\src\packages\agilex.persistence.1.0.0.19\lib\net40\agilex.persistence.nhibernate.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Core">
       <HintPath>..\packages\Castle.Core.2.5.2\lib\NET35\Castle.Core.dll</HintPath>
@@ -78,6 +78,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Sport England\src\SDT.ActivePlaces.Domain\SDT.ActivePlaces.Domain.csproj">
+      <Project>{EE82B501-CE22-4DB4-8823-E09D784226BA}</Project>
+      <Name>SDT.ActivePlaces.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

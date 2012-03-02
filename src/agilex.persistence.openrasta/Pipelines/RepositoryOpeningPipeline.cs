@@ -1,15 +1,22 @@
 using OpenRasta.Pipeline;
 using OpenRasta.Web;
+using agilex.persistence.Repository.Callbacks;
 
 namespace agilex.persistence.openrasta.Pipelines
 {
     public class RepositoryOpeningPipeline : IPipelineContributor
     {
+        readonly IRepositoryCallbacks _repositoryCallbacks;
         readonly IRepositoryFactory _repositoryFactory;
 
-        public RepositoryOpeningPipeline(IRepositoryFactory repositoryFactory)
+        public RepositoryOpeningPipeline(IRepositoryFactory repositoryFactory) : this(repositoryFactory, null)
+        {
+        }
+
+        public RepositoryOpeningPipeline(IRepositoryFactory repositoryFactory, IRepositoryCallbacks repositoryCallbacks)
         {
             _repositoryFactory = repositoryFactory;
+            _repositoryCallbacks = repositoryCallbacks;
         }
 
         #region IPipelineContributor Members
@@ -25,7 +32,9 @@ namespace agilex.persistence.openrasta.Pipelines
         {
             if (context.Request.Uri.ToString().Contains("favicon")) return PipelineContinuation.Continue;
 
-            IRepository repository = _repositoryFactory.Instance();
+            IRepository repository = _repositoryCallbacks == null
+                                         ? _repositoryFactory.Instance()
+                                         : _repositoryFactory.Instance(_repositoryCallbacks);
             repository.BeginTransaction();
             context.PipelineData.Add(ContextKeys.Repository, repository);
             return PipelineContinuation.Continue;
